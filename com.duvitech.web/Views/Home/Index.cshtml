@@ -1,0 +1,112 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+@section PageStyles {
+<link href="~/assets/admin/pages/css/coming-soon.css" rel="stylesheet" type="text/css" />
+}
+
+<div class="row">
+    <div class="col-md-12 coming-soon-header">
+        <a class="brand" href="index.html">
+            <img src="~/assets/admin/layout/img/SmallLogo.png" alt="logo" />
+        </a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 coming-soon-content">
+        <h1>Coming Soon!</h1>
+        <p>
+            On September 1, 2014 Duvitech will launch their site and let the world know what they have been working on.  Subscribe to our news letter and stop back on September 1, 2014 to see what we are up to.
+        </p>
+        <br>
+        <form class="form-inline" action="#">
+            <div class="input-group input-large">
+                <input type="text" class="form-control">
+                <span class="input-group-btn">
+                    <button class="btn blue" type="button">
+                        <span>
+                            Subscribe
+                        </span>
+                        <i class="m-icon-swapright m-icon-white"></i>
+                    </button>
+                </span>
+            </div>
+        </form>
+        <ul class="social-icons margin-top-20">
+            <li>
+                <a href="#" data-original-title="Feed" class="rss">
+                </a>
+            </li>
+            <li>
+                <a href="#" data-original-title="Facebook" class="facebook">
+                </a>
+            </li>
+            <li>
+                <a href="#" data-original-title="Twitter" class="twitter">
+                </a>
+            </li>
+            <li>
+                <a href="#" data-original-title="Goole Plus" class="googleplus">
+                </a>
+            </li>
+            <li>
+                <a href="#" data-original-title="Pinterest" class="pintrest">
+                </a>
+            </li>
+            <li>
+                <a href="#" data-original-title="Linkedin" class="linkedin">
+                </a>
+            </li>
+            <li>
+                <a href="#" data-original-title="Vimeo" class="vimeo">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-6 coming-soon-countdown">
+        <div id="defaultCountdown">
+        </div>
+    </div>
+</div>
+<!--/end row-->
+<div class="row">
+    <div class="col-md-12 coming-soon-footer">
+        2014 &copy; Duvitech. All Rights Reserved.
+    </div>
+</div>
+
+@section PagePlugins {
+<script src="~/assets/global/plugins/countdown/jquery.countdown.min.js" type="text/javascript"></script>
+<script src="~/assets/global/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
+}
+
+@section PageScripts {
+<script src="~/assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="~/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="~/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="~/assets/admin/pages/scripts/coming-soon.js" type="text/javascript"></script>
+}
+
+@section Scripts {
+<script>
+    jQuery(document).ready(function () {
+        Metronic.init(); // init metronic core components
+        Layout.init(); // init current layout
+        QuickSidebar.init() // init quick sidebar
+        ComingSoon.init();
+
+        // init background slide images
+        $.backstretch([
+                "/assets/admin/pages/media/bg/Slider_4.jpg",
+                "/assets/admin/pages/media/bg/technology-code.jpg",
+                "/assets/admin/pages/media/bg/technology-keyboard.jpg"
+        ], {
+            fade: 1000,
+            duration: 10000
+        });
+
+    });
+</script>
+
+}
