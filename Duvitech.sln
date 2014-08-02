@@ -10,6 +10,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.duvitech.web.tests", "com.duvitech.web.tests\com.duvitech.web.tests.csproj", "{C4BC07D5-2167-42AE-B24B-0E219E210C4A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{6CCD2BBE-05F2-4924-B045-63F43DE5B6A4}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\README = Documentation\README
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{54E6096F-3980-4E83-9130-EA198015946E}"
 	ProjectSection(SolutionItems) = preProject
