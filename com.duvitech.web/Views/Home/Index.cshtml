@@ -3,6 +3,7 @@
 }
 
 @section PageStyles {
+<link rel="stylesheet" type="text/css" href="~/assets/global/plugins/bootstrap-toastr/toastr.min.css" />
 <link href="~/assets/admin/pages/css/coming-soon.css" rel="stylesheet" type="text/css" />
 }
 
@@ -20,19 +21,20 @@
             On September 1, 2014 Duvitech will launch their site and let the world know what they have been working on.  Subscribe to our news letter and stop back on September 1, 2014 to see what we are up to.
         </p>
         <br>
-        <form class="form-inline" action="#">
+        <form id="idSubscribeForm" class="form-inline">
+            <input id="Invalid" name="Invalid" type="hidden" class="form-control" value="false">
             <div class="input-group input-large">
-                <input type="text" class="form-control">
-                <span class="input-group-btn">
-                    <button class="btn blue" type="button">
-                        <span>
-                            Subscribe
-                        </span>
-                        <i class="m-icon-swapright m-icon-white"></i>
-                    </button>
-                </span>
-            </div>
-        </form>
+                    <input id="EmailAddress" name="EmailAddress" type="text" class="form-control">
+                    <span class="input-group-btn">
+                        <button id="idSubscribeSubmitButton" class="btn blue" type="button" onclick="addEmailToMailerList()">
+                            <span>
+                                Subscribe
+                            </span>
+                            <i class="m-icon-swapright m-icon-white"></i>
+                        </button>
+                    </span>
+                </div>
+</form>
         <ul class="social-icons margin-top-20">
             <li>
                 <a href="#" data-original-title="Feed" class="rss">
@@ -77,11 +79,16 @@
 </div>
 
 @section PagePlugins {
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
 <script src="~/assets/global/plugins/countdown/jquery.countdown.min.js" type="text/javascript"></script>
 <script src="~/assets/global/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
 }
 
 @section PageScripts {
+<script src="~/assets/global/plugins/bootstrap-toastr/toastr.min.js"></script>
+<script src="~/assets/admin/pages/scripts/ui-toastr.js"></script>
 <script src="~/assets/global/scripts/metronic.js" type="text/javascript"></script>
 <script src="~/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
 <script src="~/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
@@ -90,9 +97,77 @@
 
 @section Scripts {
 <script>
+
+    function addEmailToMailerList()
+    {
+        if ($.trim($('#EmailAddress').val()) === '') {
+            console.log("Email address is required and cannot be empty");
+            toastr.error("Email address is required and cannot be empty");
+            $("#EmailAddress").parent("div").addClass("has-error");
+            $("#EmailAddress").focus();
+            return;
+        }
+        else {
+            $("#ManufacturerName").parent("div").removeClass("has-error");
+        }
+
+        // get variables and check for blank entry in displayname
+        var form = $("#idSubscribeForm");
+
+        // create form data
+        var formData = $(form).serialize();
+
+        // Send
+        $.ajax({
+            url: '/api/MonthlyMailers/',
+            type: 'POST',
+            data: formData,
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            processData: false,
+            beforeSend: function () {
+                // show loader animation
+                console.log("started ajax post to Monthly Mailers api.");
+                if ($("#EmailAddress").hasClass("has-error"))
+                    $("#EmailAddress").parent("div").removeClass("has-error");
+            },
+            complete: function () {
+                // hide loader animation
+                console.log("completed ajax post to Monthly Mailers api.");
+
+            },
+            success: function (data, textStatus, XMLHttpRequest) {
+                console.log(data);
+                if (data.result == true) {
+                    // toast message
+                    console.log("Created entry in monthly mailer table.");
+                    if (data.msg != null)
+                        toastr.success(data.msg);
+                    else
+                        toastr.success("Successfully added to the monthly mailer");
+                }
+                else {
+                    console.log("failed to create monthly mailer entry");
+                    if(data.msg != null)
+                        toastr.error(data.msg);
+                    else
+                        toastr.error("Server error occurred please try again later");
+                    $("#EmailAddress").parent("div").addClass("has-error");
+                    $("#EmailAddress").focus();
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log("Server Error: " + xhr.responseText);
+                toastr.error("Server Error: " + xhr.responseText);
+            }
+        });
+
+    }
+
     jQuery(document).ready(function () {
         Metronic.init(); // init metronic core components
         Layout.init(); // init current layout
+
+        UIToastr.init();
         QuickSidebar.init() // init quick sidebar
         ComingSoon.init();
 
@@ -105,6 +180,8 @@
             fade: 1000,
             duration: 10000
         });
+
+
 
     });
 </script>

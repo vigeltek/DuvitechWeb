@@ -50,7 +50,7 @@ namespace com.duvitech.domain.Entities
 
         public int PublicationNumber { get; set; }
 
-        public DateTime LastEmailSent { get; set; }
+        public DateTime? LastEmailSent { get; set; }
 
 
         // data tracking elements
