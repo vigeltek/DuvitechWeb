@@ -9,7 +9,7 @@ namespace com.duvitech.domain.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(com.duvitech.domain.Concrete.DuvitechContext context)
