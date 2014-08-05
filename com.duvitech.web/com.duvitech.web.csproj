@@ -3438,6 +3438,7 @@
     <Content Include="sass\global\plugins\_select2.scss" />
     <Content Include="sass\global\plugins\_uniform.scss" />
     <Content Include="sass\global\_variables.scss" />
+    <None Include="Properties\PublishProfiles\duvitech.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\GoDaddy.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
