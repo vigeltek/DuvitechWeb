@@ -1,71 +1,193 @@
-﻿<!DOCTYPE html>
-<html>
+﻿@{
+
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Duvitech</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="description" />
-    <meta content="George Vigelette" name="author" />
+    <title>Duvitech</title>
+    <meta charset="utf-8">
+    <link rel="icon" href="~/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="~/img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="Your description">
+    <meta name="keywords" content="Your keywords">
+    <meta name="author" content="Your name">
+    <meta name="format-detection" content="telephone=no" />
+    <!--bootstrap styles -->
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <!--main styles -->
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/MyMedia.css">
+    <link rel="stylesheet" href="~/css/animate.css">
+    <!--bootstrap-tabs styles -->
+    <link rel="stylesheet" href="~/css/bootstrap-tabs.css">
+    <!--bxslider styles -->
+    <link rel="stylesheet" href="~/css/bxslider.css">
+    <!--jackbox styles -->
+    <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+    <link rel="stylesheet" href="~/css/revolution-slider.css">
 
-    <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
-    <link href="~/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
-    <link href="~/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
-    <!-- END GLOBAL MANDATORY STYLES -->
+    <link href="~/jackbox/css/jackbox.css" rel="stylesheet" type="text/css" />
+    <link href="~/jackbox/css/jackbox_hovers.css" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-    <!-- BEGIN PAGE STYLES -->
-    @RenderSection("PageStyles", required: false)
-    <!-- END PAGE STYLES -->
 
-    <!-- BEGIN THEME STYLES -->
-    <link href="~/assets/global/css/components.css" rel="stylesheet" type="text/css" />
-    <link href="~/assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
-    <link href="~/assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css" />
-    <link id="style_color" href="~/assets/admin/layout/css/themes/default.css" rel="stylesheet" type="text/css" />
-    <link href="~/assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css" />
-    <!-- END THEME STYLES -->
-
-    @Scripts.Render("~/bundles/modernizr")
-
-    <link rel="shortcut icon" href="favicon.ico" />
+    <!--[if lt IE 8]>
+        <div style='text-align:center'><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/img/upgrade.jpg"border="0"alt=""/></a></div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:800' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="~/css/ie.css">
+      <script src="~/js/html5shiv.js"></script>
+    <![endif]-->
+    <!--[if gte IE 9]>
+      <link rel="stylesheet" href="~/css/ie.css">
+    <![endif]-->
 </head>
-<body>
-    <div class="container">
-        @RenderBody()
+
+<body class="wide_layout relative w_xs_auto">
+
+    <header class="header_3">
+
+        @Html.Partial("_TopMenu")
+
+        <div class="header_top">
+            <div class="container">
+                <div class="navbar navbar_ clearfix">
+                    <div class="navbar-inner">
+                        <h1 class="brand"><a href="index.html"><img src="~/img/Side_Logo_Small.png" alt=""></a><span>reviver</span></h1>
+                        <form id="form-search">
+                            <span></span>
+                            <input type="text" onfocus="if(this.value =='Type text and hit enter' ) this.value=''" onblur="if(this.value=='') this.value='Type text and hit enter'" value="Type text and hit enter" name="s">
+                        </form>
+                        <!--<a href="#" class="btn-cart btn-large btn-large-1">Cart (0)<span></span></a>-->
+                    </div>
+                </div>
+            </div>
+
+            <!--========main-menu========-->
+            @Html.Partial("_MainMenu")
+            <!--========end main-menu========-->
+
+        </div>
+
+    </header>
+    <!--==============================end header==============================-->
+    <!--==============================content=================================-->
+    @RenderBody()
+    <!--==============================aside================================-->
+    @Html.Partial("_BottomBanner")
+
+    <!--==============================footer================================-->
+    @Html.Partial("_Footer")
+
+    <div id="gotoTop" class="fa fa-angle-up"></div>
+
+    <!--========block social========-->
+
+    <div class="social">
+        <ul>
+            <li><a class="mail hasTooltip" data-original-title="mail" href="mailto:gvigelet@duvitech.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
+            <li><a class="facebook hasTooltip" data-original-title="facebook" href="https://www.facebook.com/duvitech" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter hasTooltip" data-original-title="twitter" href="https://twitter.com/duvitech" target="_blank"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="linkedin hasTooltip" data-original-title="linkedin" href="http://www.linkedin.com/company/duvitech" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        </ul>
     </div>
 
-    <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-    <!-- BEGIN CORE PLUGINS -->
-    <!--[if lt IE 9]>
-    <script src="~/assets/global/plugins/respond.min.js"></script>
-    <script src="~/assets/global/plugins/excanvas.min.js"></script>
-    <![endif]-->
-    <script src="~/assets/global/plugins/jquery-1.11.0.min.js" type="text/javascript"></script>
-    <script src="~/assets/global/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
-    <!-- IMPORTANT! Load jquery-ui-1.10.3.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-    <script src="~/assets/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
-    <script src="~/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="~/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-    <script src="~/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-    <script src="~/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-    <script src="~/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-    <script src="~/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
-    <script src="~/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
-    <!-- END CORE PLUGINS -->
+    <script src="~/js/jquery.js"></script>
 
-    <!-- BEGIN PAGE LEVEL PLUGINS -->
-    @RenderSection("PagePlugins", required: false)
-    <!-- END PAGE LEVEL PLUGINS -->
-    <!-- BEGIN PAGE LEVEL SCRIPTS -->
-    @RenderSection("PageScripts", required: false)
-    <!-- END PAGE LEVEL SCRIPTS -->
+    <script src="~/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="~/js/jquery.bxslider.js"></script>
 
-    @RenderSection("scripts", required: false)
+    <script src="~/js/appear.js"></script>
+    <script src="~/js/retina.js"></script>
+    <script src="~/js/bootstrap.js"></script>
+    <script src="~/js/script.js"></script>
 
+    <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+    <script src="~/js/jquery.themepunch.plugins.min.js"></script>
+    <script src="~/js/jquery.themepunch.revolution.min.js"></script>
+
+    <script type="text/javascript">
+
+
+        jQuery(document).ready(function () {
+            $('.tp-banner').revolution(
+             {
+                 delay: 9000,
+                 startwidth: 1170,
+                 startheight: 500,
+                 hideThumbs: 10,
+                 fullWidth: "on",
+                 forceFullWidth: "on"
+             });
+
+
+            if($('#newsletter-form') != undefined)
+            {
+                // register newsletter form submit
+                $("#newsletter-form").submit(function (event) {
+                    event.preventDefault();
+
+                    // get form data
+                    var formData = $(this).serialize();
+
+                    // post data to newsletter service
+                    $.ajax({
+                        url: '/api/MonthlyMailers/',
+                        type: 'POST',
+                        data: formData,
+                        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                        processData: false,
+                        beforeSend: function () {
+                            // show loader animation
+                            console.log("started ajax post to Monthly Mailers api.");
+                            if ($("#EmailAddress").hasClass("has-error"))
+                                $("#EmailAddress").parent("div").removeClass("has-error");
+                        },
+                        complete: function () {
+                            // hide loader animation
+                            console.log("completed ajax post to Monthly Mailers api.");
+
+                        },
+                        success: function (data, textStatus, XMLHttpRequest) {
+                            console.log(data);
+                            if (data.result == true) {
+                                // toast message
+                                console.log("Created entry in monthly mailer table.");
+                                if (data.msg != null)
+                                    toastr.success(data.msg);
+                                else
+                                    toastr.success("Successfully added to the monthly mailer");
+                            }
+                            else {
+                                console.log("failed to create monthly mailer entry");
+                                if (data.msg != null)
+                                    toastr.error(data.msg);
+                                else
+                                    toastr.error("Server error occurred please try again later");
+                                $("#EmailAddress").parent("div").addClass("has-error");
+                                $("#EmailAddress").focus();
+                            }
+                        },
+                        error: function (xhr, ajaxOptions, thrownError) {
+                            console.log("Server Error: " + xhr.responseText);
+                            toastr.error("Server Error: " + xhr.responseText);
+                        }
+                    });
+
+                });
+            }
+
+
+        }); //ready
+
+    </script>
 </body>
 </html>

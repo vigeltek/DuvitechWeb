@@ -1,189 +1,177 @@
 ﻿@{
-    ViewBag.Title = "Home";
+
 }
 
-@section PageStyles {
-<link rel="stylesheet" type="text/css" href="~/assets/global/plugins/bootstrap-toastr/toastr.min.css" />
-<link href="~/assets/admin/pages/css/coming-soon.css" rel="stylesheet" type="text/css" />
-}
+@Html.Partial("_IntroSlider")
 
-<div class="row">
-    <div class="col-md-12 coming-soon-header">
-        <a class="brand" href="index.html">
-            <img src="~/assets/admin/layout/img/SmallLogo.png" alt="logo" />
-        </a>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-6 coming-soon-content">
-        <h1>Coming Soon!</h1>
-        <p>
-            On September 1, 2014 Duvitech will launch their site and let the world know what they have been working on.  Subscribe to our news letter and stop back on September 1, 2014 to see what we are up to.
-        </p>
-        <br>
-        <form id="idSubscribeForm" class="form-inline">
-            <input id="Invalid" name="Invalid" type="hidden" class="form-control" value="false">
-            <div class="input-group input-large">
-                    <input id="EmailAddress" name="EmailAddress" type="text" class="form-control">
-                    <span class="input-group-btn">
-                        <button id="idSubscribeSubmitButton" class="btn blue" type="button" onclick="addEmailToMailerList()">
-                            <span>
-                                Subscribe
-                            </span>
-                            <i class="m-icon-swapright m-icon-white"></i>
-                        </button>
-                    </span>
-                </div>
-</form>
-        <ul class="social-icons margin-top-20">
-            <li>
-                <a href="#" data-original-title="Feed" class="rss">
-                </a>
-            </li>
-            <li>
-                <a href="#" data-original-title="Facebook" class="facebook">
-                </a>
-            </li>
-            <li>
-                <a href="#" data-original-title="Twitter" class="twitter">
-                </a>
-            </li>
-            <li>
-                <a href="#" data-original-title="Goole Plus" class="googleplus">
-                </a>
-            </li>
-            <li>
-                <a href="#" data-original-title="Pinterest" class="pintrest">
-                </a>
-            </li>
-            <li>
-                <a href="#" data-original-title="Linkedin" class="linkedin">
-                </a>
-            </li>
-            <li>
-                <a href="#" data-original-title="Vimeo" class="vimeo">
-                </a>
-            </li>
-        </ul>
-    </div>
-    <div class="col-md-6 coming-soon-countdown">
-        <div id="defaultCountdown">
+<div id="content">
+    <div class="content-div">
+        <div class="container">
+            <section class="box-block row extra">
+                <article class="span4" data-appear-animation="bounceInLeft">
+                    <div class="block-info  maxheight">
+                        <div class="inner-block">
+                            <img src="~/img/index-img.jpg" alt="">
+                            <div class="box-text-small">
+                                <h4>Extremely Responsive Layout</h4>
+                                <p>Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. </p>
+                                <a href="#" class="btn-small">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="span4" data-appear-animation="bounceInLeft" data-appear-animation-delay="550">
+                    <div class="block-info  maxheight">
+                        <div class="inner-block">
+                            <img src="~/img/index-img_1.jpg" alt="">
+                            <div class="box-text-small">
+                                <h4>A Ton of Awesome Features</h4>
+                                <p>Integer rutrum ante eu lacus.Vestibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque. Vivamus eget nibh. </p>
+                                <a href="#" class="btn-small">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="span4" data-appear-animation="bounceInLeft" data-appear-animation-delay="1100">
+                    <div class="block-info  maxheight">
+                        <div class="inner-block">
+                            <img src="~/img/index-img_2.jpg" alt="">
+                            <div class="box-text-small">
+                                <h4>Advanced Theme Options</h4>
+                                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sollicitudin velit sed leo. </p>
+                                <a href="#" class="btn-small">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <div class="row tabs-inner">
+                <!--========tabs========-->
+                <article class="span8" data-appear-animation="fadeInLeft" data-appear-animation-delay="550">
+
+                    <!-- tabs -->
+                    <div class="tabbable ">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#one" data-toggle="tab">About Our Company</a></li>
+                            <li><a href="#two" data-toggle="tab">Company Philosophy</a></li>
+                            <li><a href="#three" data-toggle="tab">Our Mission</a></li>
+                        </ul>
+
+
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="one">
+                                <figure class="img-polaroid"><img src="~/img/index-img_10.jpg" alt=""></figure>
+                                <div class="extra-wrap">
+                                    <p>Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus.</p>
+                                    <p>Vestibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque. Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue. Nam elit agna,endrerit sit amet</p>
+                                    <a href="#" class="link">Read More</a>
+                                </div>
+
+                            </div>
+
+
+                            <div class="tab-pane" id="two">
+
+                                <figure class="img-polaroid"><img src="~/img/index-img_9.jpg" alt=""></figure>
+                                <div class="extra-wrap">
+                                    <p>Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus.</p>
+                                    <p>Vestibulum libero nisl. Aenean nec eros. Vestibulum ante. Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue. Nam elit agna,endrerit sit amet</p>
+                                    <a href="#" class="link">Read More</a>
+                                </div>
+
+                            </div>
+
+
+                            <div class="tab-pane" id="three">
+
+                                <figure class="img-polaroid"><img src="~/img/index-img_8.jpg" alt=""></figure>
+                                <div class="extra-wrap">
+                                    <p>Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Aenean auctor wisi et urna, porta vel, scelerisque eget, malesuada at, neque. Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue. Nam elit agna,endrerit sit amet</p>
+                                    <a href="#" class="link">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /tabs -->
+                </article>
+                <!--========end tabs========-->
+                <!--========People Choose========-->
+
+                <article class="span4" data-appear-animation="fadeInRight" data-appear-animation-delay="550">
+                    <h3>Why People Choose Us</h3>
+                    <ul class="list_1">
+                        <li><i class="fa fa-check"></i><a href="#">Aliquam erat volutpat. Duis ac turpis. </a></li>
+                        <li><i class="fa fa-check"></i><a href="#">Donec sit amet eros lorem ipsum dolor sit.</a></li>
+                        <li><i class="fa fa-check"></i><a href="#">Amet, consectetuer adipiscing elit.</a></li>
+                        <li><i class="fa fa-check"></i><a href="#">Mauris fermentum dictum magna.</a></li>
+                        <li><i class="fa fa-check"></i><a href="#">Sed laoreet aliquam leo aenean auctor.</a></li>
+                        <li><i class="fa fa-check"></i><a href="#">Aliquam erat volutpat duis ac turpis.</a></li>
+                        <li><i class="fa fa-check"></i><a href="#">Integer rutrum ante eu lacus vestibulum.</a></li>
+                    </ul>
+                </article>
+
+                <!--========end People Choose========-->
+            </div>
+
+            <!--========row banners========-->
+            <div class="row box-banner_1" data-appear-animation="bounceIn" data-appear-animation-delay="550">
+                <article class="span6"> <a href="#" class="hover"> <img alt="" class="front" src="~/img/block_banner_1.jpg"> <img alt="" class="back" src="~/img/block_banner_1-hover.jpg"> </a> </article>
+                <article class="span6"> <a href="#" class="hover"> <img alt="" class="front front-vert" src="~/img/block_banner_2.jpg"> <img alt="" class="back back-vert" src="~/img/block_banner_2-hover.jpg"> </a> </article>
+            </div>
+            <!--========end row banners========-->
+
+            <div class="row">
+                <!--========Latest News========-->
+                <article class="span8" data-appear-animation="bounceInUp" data-appear-animation-delay="550">
+                    <h3>Latest News</h3>
+                    <div class="row">
+                        <ul class="list-news">
+                            <li class="span4 m_xm_bottom_20">
+                                <div class="badge"> <strong>27<span>APR</span></strong> <em><a href="#"><i class="fa fa-comments-o"></i> 6</a></em> <span><a href="#"><i class="fa fa-film"></i></a></span> </div>
+                                <div class="extra-wrap">
+                                    <h5><a href="#">Aenean auctor wisi et urna</a></h5>
+                                    <span class="txt-1">posted by <a href="#">admin</a> in <a href="#">Work Process</a></span>
+                                    <p class="txt-2">Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus.Vestibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque. Vivamus eget nibh. Etiam cursus leo vel metus. </p>
+                                    <a href="#" class="link">Read More</a>
+                                </div>
+                            </li>
+                            <li class="span4">
+                                <div class="badge"> <strong>21<span>APR</span></strong> <em> <a href="#"><i class="fa fa-comments-o"></i> 139</a></em> <span><a href="#"><i class="fa fa-link"></i></a></span> </div>
+                                <div class="extra-wrap">
+                                    <h5><a href="#">Vestibulum sed ante</a></h5>
+                                    <span class="txt-1">posted by <a href="#">admin</a> in <a href="#">Work Process</a></span>
+                                    <p class="txt-2">Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sollicitudin velit sed leo. </p>
+                                    <a href="#" class="link">Read More</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+                <!--========end Latest News========-->
+                <!--========Client testimonials========-->
+                <article class="span4" data-appear-animation="bounceInDown" data-appear-animation-delay="550">
+                    <h3>Client testimonials</h3>
+                    <!--==========carousel-2=============-->
+                    <div class="carousel-2 carousel">
+                        <ul id="carousel-2" class="clearfix">
+                            <li>
+                                <blockquote> <i class="fa fa-quote-left"></i> <em>Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue. Nam elit agna,endrerit sit amet, tincidunt ac, viverra sed, nulla. Donec porta diam eu massa.</em> <span class="txt-2">John Doe, Co-founder, Company Name</span> </blockquote>
+                            </li>
+                            <li>
+                                <blockquote> <i class="fa fa-quote-left"></i> <em>Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus.Vestibulum libero nisl, porta vel,  malesuada at, neque. Vivamus eget nibh. Etiam cursus leo vel metus. </em> <span class="txt-2">John Doe, Co-founder, Company Name</span> </blockquote>
+                            </li>
+                            <li>
+                                <blockquote> <i class="fa fa-quote-left"></i> <em>Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci  posuere cubilia Curae; Suspendisse sollicitudin velit sed leo. </em> <span class="txt-2">John Doe, Co-founder, Company Name</span> </blockquote>
+                            </li>
+                        </ul>
+                        <div class="div-control"><div class="prev-slide prev-1"></div> <div class="next-slide next-1"></div> </div>
+                        <a href="#" class="link">Read More Testimonials</a>
+                    </div>
+                    <!--==========end carousel-2=============-->
+                </article>
+                <!--========end Client testimonials========-->
+            </div>
         </div>
     </div>
 </div>
-<!--/end row-->
-<div class="row">
-    <div class="col-md-12 coming-soon-footer">
-        2014 &copy; Duvitech. All Rights Reserved.
-    </div>
-</div>
-
-@section PagePlugins {
-<script src="~/Scripts/jquery.validate.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
-<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
-<script src="~/assets/global/plugins/countdown/jquery.countdown.min.js" type="text/javascript"></script>
-<script src="~/assets/global/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
-}
-
-@section PageScripts {
-<script src="~/assets/global/plugins/bootstrap-toastr/toastr.min.js"></script>
-<script src="~/assets/admin/pages/scripts/ui-toastr.js"></script>
-<script src="~/assets/global/scripts/metronic.js" type="text/javascript"></script>
-<script src="~/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
-<script src="~/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
-<script src="~/assets/admin/pages/scripts/coming-soon.js" type="text/javascript"></script>
-}
-
-@section Scripts {
-<script>
-
-    function addEmailToMailerList()
-    {
-        if ($.trim($('#EmailAddress').val()) === '') {
-            console.log("Email address is required and cannot be empty");
-            toastr.error("Email address is required and cannot be empty");
-            $("#EmailAddress").parent("div").addClass("has-error");
-            $("#EmailAddress").focus();
-            return;
-        }
-        else {
-            $("#ManufacturerName").parent("div").removeClass("has-error");
-        }
-
-        // get variables and check for blank entry in displayname
-        var form = $("#idSubscribeForm");
-
-        // create form data
-        var formData = $(form).serialize();
-
-        // Send
-        $.ajax({
-            url: '/api/MonthlyMailers/',
-            type: 'POST',
-            data: formData,
-            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-            processData: false,
-            beforeSend: function () {
-                // show loader animation
-                console.log("started ajax post to Monthly Mailers api.");
-                if ($("#EmailAddress").hasClass("has-error"))
-                    $("#EmailAddress").parent("div").removeClass("has-error");
-            },
-            complete: function () {
-                // hide loader animation
-                console.log("completed ajax post to Monthly Mailers api.");
-
-            },
-            success: function (data, textStatus, XMLHttpRequest) {
-                console.log(data);
-                if (data.result == true) {
-                    // toast message
-                    console.log("Created entry in monthly mailer table.");
-                    if (data.msg != null)
-                        toastr.success(data.msg);
-                    else
-                        toastr.success("Successfully added to the monthly mailer");
-                }
-                else {
-                    console.log("failed to create monthly mailer entry");
-                    if(data.msg != null)
-                        toastr.error(data.msg);
-                    else
-                        toastr.error("Server error occurred please try again later");
-                    $("#EmailAddress").parent("div").addClass("has-error");
-                    $("#EmailAddress").focus();
-                }
-            },
-            error: function (xhr, ajaxOptions, thrownError) {
-                console.log("Server Error: " + xhr.responseText);
-                toastr.error("Server Error: " + xhr.responseText);
-            }
-        });
-
-    }
-
-    jQuery(document).ready(function () {
-        Metronic.init(); // init metronic core components
-        Layout.init(); // init current layout
-
-        UIToastr.init();
-        QuickSidebar.init() // init quick sidebar
-        ComingSoon.init();
-
-        // init background slide images
-        $.backstretch([
-                "/assets/admin/pages/media/bg/Slider_4.jpg",
-                "/assets/admin/pages/media/bg/technology-code.jpg",
-                "/assets/admin/pages/media/bg/technology-keyboard.jpg"
-        ], {
-            fade: 1000,
-            duration: 10000
-        });
-
-
-
-    });
-</script>
-
-}
