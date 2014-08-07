@@ -26,5 +26,21 @@ namespace com.duvitech.web.Controllers
 
             return View();
         }
+
+        public ActionResult PrivacyPolicy()
+        {
+            return View();
+        }
+
+        public ActionResult TermsOfUse()
+        {
+            return View();
+        }
+
+
+        public ActionResult RefundPolicy()
+        {
+            return View();
+        }
     }
 }

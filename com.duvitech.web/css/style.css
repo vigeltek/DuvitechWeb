@@ -94,6 +94,14 @@ a:visited {
   border: none;
   text-decoration: none;
 }
+
+
+ul.RefundPol li {
+    list-style-type: circle; 
+    line-height: 8px;
+    padding-left: 14px; 
+}
+
 /* headings, text */
 h1,
 h2,
