@@ -60,5 +60,8 @@ namespace com.duvitech.domain.Concrete
 
         public DbSet<MonthlyMailer> MonthlyMailers { get; set; }
 
+        public DbSet<Country> Countries { get; set; }
+
+        public DbSet<CellularCarrier> CellularCarriers { get; set; }
     }
 }
