@@ -259,7 +259,9 @@
     <Content Include="jackbox\swf\source\cj\video\VolumeTotal.as" />
     <Content Include="jackbox\swf\source\video_fallback.fla" />
     <Content Include="jackbox\video\1.webm" />
+    <None Include="Properties\PublishProfiles\Duvitech-Azure.pubxml" />
     <None Include="Properties\PublishProfiles\duvitech.com - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\duvitech.pubxml" />
     <None Include="Properties\PublishProfiles\GoDaddy.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="img\alert_close.png" />
